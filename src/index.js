@@ -43,7 +43,8 @@ export type Props = {
   readOnly?: boolean,
   required?: boolean,
   value?: string,
-  multiple?: boolean
+  multiple?: boolean,
+  ensureExtension?: boolean
 };
 
 export default class FirebaseFileUploader extends Component<Props> {
@@ -91,7 +92,7 @@ export default class FirebaseFileUploader extends Component<Props> {
     }
 
     // Ensure there is an extension in the filename
-    if (!extractExtension(filenameToUse)) {
+    if (ensureExtension && !extractExtension(filenameToUse)) {
       filenameToUse += extractExtension(file.name);
     }
 
