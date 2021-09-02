@@ -80,7 +80,8 @@ export default class FirebaseFileUploader extends Component<Props> {
       storageRef,
       metadata,
       randomizeFilename,
-      filename
+      filename,
+      ensureExtension
     } = this.props;
 
     let filenameToUse;
@@ -158,6 +159,7 @@ export default class FirebaseFileUploader extends Component<Props> {
       maxWidth,
       maxHeight,
       hidden,
+      ensureExtension,
       as: Input = 'input',
       ...props
     } = this.props;
